@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+.highlight {
+  background-color: #D1C4E9;
+  border: 1px solid #512DA8;
+  z-index: 1;
+  transform: scale(1.01);
+}
+
+.background-primary {
+  background-color: #512DA8 !important;
+}
+
+.background-accent {
+  background-color: #FFC107 !important;
+}
+
+.text-floral-white {
+  color: floralwhite !important;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */

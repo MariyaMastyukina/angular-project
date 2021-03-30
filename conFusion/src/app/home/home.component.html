@@ -1,0 +1,75 @@
+<script src="../shared/leader.ts"></script>
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+  <div fxFlex *ngIf="dish"  [@expand]>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <h3>{{dish.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{'http://localhost:3000/' + dish.image}}" alt="{{dish.name}}">
+      <mat-card-content>
+        <p>{{dish.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex [hidden]="dish || dishError">
+    <mat-spinner></mat-spinner><h4>Loading...Please wait!</h4>
+  </div>
+  <div fxFlex *ngIf="dishError">
+    <h2>Error</h2>
+    <h4>{{dishError}}</h4>
+  </div>
+  <div *ngIf="promotion" fxFlex [@expand]>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <h3>{{promotion.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{'http://localhost:3000/'+promotion.image}}" alt="{{promotion.name}}">
+      <mat-card-content>
+        <p>{{promotion.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex [hidden]="promotion || promotionError">
+    <mat-spinner></mat-spinner><h4>Loading...Please wait!</h4>
+  </div>
+  <div fxFlex *ngIf="promotionError">
+    <h2>Error</h2>
+    <h4>{{promotionError}}</h4>
+  </div>
+  <div *ngIf="leader" fxFlex [@expand]>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <h3>{{leader.name | uppercase}} {{leader.abbr}}</h3>
+          <h4>{{leader.designation}}</h4>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{'http://localhost:3000/' + leader.image}}" alt="{{leader.name}}">
+      <mat-card-content>
+        <p>{{leader.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex [hidden]="leader || leaderError">
+    <mat-spinner></mat-spinner><h4>Loading...Please wait!</h4>
+  </div>
+  <div fxFlex *ngIf="leaderError">
+    <h2>Error</h2>
+    <h4>{{leaderError}}</h4>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  Comments
+  <span class="flex-spacer"></span>
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+<br>
+  <mat-grid-list cols="1" *ngIf="newComment">
+    <mat-list-tile>
+      <p>
+        <span>{{newComment.comment}}</span>
+      </p>
+      <p>
+        <span>{{newComment.rating}} Stars</span>
+      </p>
+      <p>
+        <span>-- {{newComment.author}} {{newComment.date | date}}</span>
+      </p>
+    </mat-list-tile>
+  </mat-grid-list>
